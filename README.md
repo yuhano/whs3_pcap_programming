@@ -27,3 +27,11 @@ Ethernet, IP, TCP 헤더 정보를 추출 및 출력하고, 메시지 내용도 
 - **TCP 프로토콜**에 대해서만 처리하며, **UDP는 무시**한다.
 - `sniff_improved.c`, `myheader.h` 파일을 참고하여 구현.
 - IP 및 TCP 헤더의 **길이 정보**를 정확히 활용하여 올바르게 파싱할 것.
+
+### 컴파일 방법
+
+패킷 캡처를 위해 `libpcap` 라이브러리를 사용하므로, 컴파일 시 해당 라이브러리를 링크해야 한다.
+
+```bash
+gcc -o net_parser net_parser.c -lpcap
+```
